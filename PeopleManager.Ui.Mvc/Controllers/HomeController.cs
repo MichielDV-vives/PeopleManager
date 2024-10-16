@@ -1,16 +1,16 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using PeopleManager.Ui.Mvc.Models;
+using PeopleManager.Ui.Mvc.Core;
 
 namespace PeopleManager.Ui.Mvc.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    private readonly Database _database;
+    public HomeController(Database database)
     {
-        _logger = logger;
+        _database = database;
     }
 
     public IActionResult Index()
